@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="w-full">
+    <header className="w-full border-b bg-white">
       <div className="flex max-w-5xl mx-auto px-6 py-12 items-center justify-between">
         {/* 로고 */}
         <div className="text-xl font-bold text-blue-600">BRILYENT</div>
