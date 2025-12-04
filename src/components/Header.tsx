@@ -1,6 +1,25 @@
+"use client";
+
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
 export default function Header() {
+  // 다크모드 상태 관리
+  const [isDark, setIsDark] = useState(() => {
+    // localStorage에서 저장된 테마 확인
+    const savedTheme = localStorage.getItem("theme");
+    return savedTheme === "dark";
+  });
+
+  useEffect(() => {
+    // html 태그에 dark 클래스 추가/제거
+    if (isDark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [isDark]);
+
   return (
     <header className="w-full border-b bg-white">
       <div className="flex max-w-5xl mx-auto px-6 py-12 items-center justify-between">
