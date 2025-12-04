@@ -32,26 +32,26 @@ export default function Header() {
   };
 
   return (
-    <header className="w-full border-b bg-white">
+    <header className="w-full border-b bg-white dark:bg-gray-900">
       <div className="flex max-w-5xl mx-auto px-6 py-12 items-center justify-between">
         {/* 로고 */}
-        <div className="text-xl font-bold text-blue-600">BRILYENT</div>
+        <div className="text-xl font-bold text-blue-600 dark:text-blue-400">BRILYENT</div>
 
         {/* 중앙 네비게이션 */}
         <nav>
           <ul className="flex gap-8 items-center">
             <li>
-              <Link href="/about" className="text-gray-600 font-semibold">
+              <Link href="/about" className="text-gray-600 font-semibold dark:text-white dark:hover:text-gray-300">
                 About
               </Link>
             </li>
             <li>
-              <Link href="/projects" className="text-gray-600 font-semibold">
+              <Link href="/projects" className="text-gray-600 font-semibold dark:text-white dark:hover:text-gray-300">
                 Projects
               </Link>
             </li>
             <li>
-              <Link href="/contact" className="text-gray-600 font-semibold">
+              <Link href="/contact" className="text-gray-600 font-semibold dark:text-white dark:hover:text-gray-300">
                 Contact
               </Link>
             </li>
@@ -62,7 +62,7 @@ export default function Header() {
         <div className="flex items-center gap-4">
           <button
             onClick={toggleDarkMode}
-            className="w-6 h-6 text-gray-600 hover:text-gray-900 transition-colors"
+            className="w-6 h-6 text-gray-600 hover:text-gray-900 dark:text-white dark:hover:text-gray-300 transition-colors"
             aria-label="다크모드 토글"
           >
             {isDark ? (
@@ -99,7 +99,7 @@ export default function Header() {
             href="https://github.com/JinWorkBench/sanghwi-portfolio"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-6 h-6 text-gray-600 hover:text-gray-900 transition-colors"
+            className="w-6 h-6 text-gray-600 hover:text-gray-900 dark:text-white dark:hover:text-gray-300 transition-colors"
             aria-label="GitHub에서 소스 코드 보기"
           >
             {/* 깃허브 아이콘 (SVG) */}
