@@ -1,3 +1,5 @@
+import ProjectCard from "./ProjectCard";
+
 export default function ProjectList() {
   return (
     <section className="max-w-5xl mx-auto px-6 py-20">
@@ -13,7 +15,13 @@ export default function ProjectList() {
 
       {/* 프로젝트 그리드 */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <p className="text-gray-500 dark:text-gray-400">프로젝트 카드 영역</p>
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        
       </div>
     </section>
   );
