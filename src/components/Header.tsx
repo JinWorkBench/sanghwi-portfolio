@@ -20,6 +20,17 @@ export default function Header() {
     }
   }, [isDark]);
 
+  const toggleDarkMode = () => {
+    const newIsDark = !isDark;
+    setIsDark(newIsDark);
+
+    if (newIsDark) {
+      localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "light");
+    }
+  };
+
   return (
     <header className="w-full border-b bg-white">
       <div className="flex max-w-5xl mx-auto px-6 py-12 items-center justify-between">
@@ -50,6 +61,7 @@ export default function Header() {
         {/* 아이콘 그룹 */}
         <div className="flex items-center gap-4">
           <button
+            onClick={toggleDarkMode}
             className="w-6 h-6 text-gray-600 hover:text-gray-900 transition-colors"
             aria-label="다크모드 토글"
           >
