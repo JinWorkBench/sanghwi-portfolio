@@ -6,9 +6,14 @@ import { useState, useEffect } from "react";
 export default function Header() {
   // 다크모드 상태 관리
   const [isDark, setIsDark] = useState(() => {
-    // localStorage에서 저장된 테마 확인
-    const savedTheme = localStorage.getItem("theme");
-    return savedTheme === "dark";
+    // 서버인지 브라우저인지 판별 (localStorage는 서버에서 실행 불가)
+    // "window 객체가 존재한다" = 브라우저 환경
+    if (typeof window !== 'undefined') {
+      // localStorage에서 저장된 테마 확인
+      const savedTheme = localStorage.getItem("theme");
+      return savedTheme === "dark";
+    }
+    return false;
   });
 
   useEffect(() => {
