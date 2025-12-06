@@ -8,7 +8,7 @@ export default function Header() {
   const [isDark, setIsDark] = useState(() => {
     // 서버인지 브라우저인지 판별 (localStorage는 서버에서 실행 불가)
     // "window 객체가 존재한다" = 브라우저 환경
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       // localStorage에서 저장된 테마 확인
       const savedTheme = localStorage.getItem("theme");
       return savedTheme === "dark";
@@ -40,23 +40,39 @@ export default function Header() {
     <header className="w-full border-b bg-white dark:bg-gray-900">
       <div className="flex max-w-5xl mx-auto px-6 py-12 items-center justify-between">
         {/* 로고 */}
-        <div className="text-xl font-bold text-blue-600 dark:text-blue-400">BRILYENT</div>
+        <div>
+          <Link
+            href="/"
+            className="text-xl font-bold text-blue-600 dark:text-blue-400"
+          >
+            BRILYENT
+          </Link>
+        </div>
 
         {/* 중앙 네비게이션 */}
         <nav>
           <ul className="flex gap-8 items-center">
             <li>
-              <Link href="/about" className="text-gray-600 font-semibold dark:text-white dark:hover:text-gray-300">
+              <Link
+                href="/about"
+                className="text-gray-600 font-semibold dark:text-white dark:hover:text-gray-300"
+              >
                 About
               </Link>
             </li>
             <li>
-              <Link href="/projects" className="text-gray-600 font-semibold dark:text-white dark:hover:text-gray-300">
+              <Link
+                href="/projects"
+                className="text-gray-600 font-semibold dark:text-white dark:hover:text-gray-300"
+              >
                 Projects
               </Link>
             </li>
             <li>
-              <Link href="/contact" className="text-gray-600 font-semibold dark:text-white dark:hover:text-gray-300">
+              <Link
+                href="/contact"
+                className="text-gray-600 font-semibold dark:text-white dark:hover:text-gray-300"
+              >
                 Contact
               </Link>
             </li>
