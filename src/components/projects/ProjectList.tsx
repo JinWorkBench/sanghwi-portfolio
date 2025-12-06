@@ -1,4 +1,5 @@
 import ProjectCard from "./ProjectCard";
+import { projects } from "@/data/projects";
 
 export default function ProjectList() {
   return (
@@ -15,13 +16,9 @@ export default function ProjectList() {
 
       {/* 프로젝트 그리드 */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        
+        {projects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
+        ))}
       </div>
     </section>
   );
